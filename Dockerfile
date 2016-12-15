@@ -1,11 +1,11 @@
-FROM gcr.io/stacksmith-images/ubuntu:14.04-r9
+FROM gcr.io/stacksmith-images/minideb:jessie-r6
 MAINTAINER Bitnami <containers@bitnami.com>
 
-ENV BITNAMI_IMAGE_VERSION=9.5.3-r4 \
+ENV BITNAMI_IMAGE_VERSION=9.6.1-r0 \
     BITNAMI_APP_NAME=postgresql \
     BITNAMI_APP_USER=postgres
 
-RUN bitnami-pkg unpack postgresql-9.5.3-5 --checksum d3fa42dc016331dfa864222d28ebae0eee0a130759102bf34fda7dd853cacb72
+RUN bitnami-pkg unpack postgresql-9.6.1-1 --checksum 1bd922f6e42bacf1764222e592e0a06b8399d8cc52bb55958834d92049618aeb
 ENV PATH=/opt/bitnami/$BITNAMI_APP_NAME/sbin:/opt/bitnami/$BITNAMI_APP_NAME/bin:$PATH
 
 COPY rootfs/ /
